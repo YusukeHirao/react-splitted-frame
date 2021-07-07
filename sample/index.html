@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>react-splitted-frame</title>
+    <style>
+      html,
+      body {
+        margin: 0;
+      }
+      header,
+      main,
+      footer {
+        display: contents;
+      }
+      .frame-content {
+        padding: 0 1em;
+      }
+      footer .frame-content {
+        display: flex;
+        justify-content: flex-end;
+      }
+      .ANY_CLASS_NAME {
+        background: red;
+      }
+      .ANY_CLASS_NAME hr {
+        width: 100%;
+        height: 100%;
+        background: #333;
+        border: 0;
+        margin: 0;
+        transition: transform 100ms;
+      }
+      .ANY_CLASS_NAME hr:focus {
+        outline-color: blue;
+        background: blue;
+      }
+      .ANY_CLASS_NAME hr[aria-orientation="horizontal"]:hover {
+        transform: scaleY(3);
+        cursor: ns-resize;
+      }
+      .ANY_CLASS_NAME hr[aria-orientation="vertical"]:hover {
+        transform: scaleX(3);
+        cursor: ew-resize;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="./index.tsx"></script>
+  </body>
+</html>

@@ -1,0 +1,32 @@
+{
+  "name": "@yusukehirao/react-splitted-frame",
+  "description": "Draggable and keyboard accessible movable splitter of frames",
+  "version": "0.3.0",
+  "license": "MIT",
+  "publishConfig": {
+    "access": "public"
+  },
+  "module": "./lib/index.js",
+  "main": "./cjs/index.js",
+  "types": "./types/index.d.ts",
+  "files": [
+    "lib",
+    "cjs",
+    "types"
+  ],
+  "peerDependencies": {
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2"
+  },
+  "devDependencies": {
+    "@types/react": "^17.0.0",
+    "@types/react-dom": "^17.0.0",
+    "typescript": "^4.3.5"
+  },
+  "scripts": {
+    "build": "yarn build:esm && yarn build:cjs",
+    "build:esm": "tsc --target esnext --module esnext   --outDir lib",
+    "build:cjs": "tsc --target es5    --module commonjs --outDir cjs",
+    "prepack": "yarn build"
+  }
+}
